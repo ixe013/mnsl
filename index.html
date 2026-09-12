@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="pico.min.css" >
+    <link rel="stylesheet" href="mnsl.css">
     <title>Maîtres-nageurs Saint-Laurent</title>
   </head>
   <body>
@@ -14,6 +15,8 @@
              alt="Club des maîtres nageurs Saint-Laurent"
            style="display: inline-block; max-width: 100%; height: auto;" >
       </h1>
+      <main>
+      </main>
       <div>
         <h2>Horaire et lieu des entraînements</h2>
         <h3>Saisons</h3>
@@ -29,12 +32,33 @@
           Les mardis et jeudis soir (indiqué par un astérisque ci-dessous), les entraînements sont tenus à la <strong><a href="https://maps.app.goo.gl/YJYXSmHadSiab8AR6">piscine Émile-Legault</a></strong> juste à côté du Complexe sportif(2395, boul. Thimens).
         </p>
         <h3>Grille horaire</h3>
-        <table>
-          <thead> <tr> <th>Lundi</th>       <th>Mardi</th>        <th>Mercredi</th>    <th>Jeudi</th>       <th>Vendredi</th> <th>Samedi</th>      <th>Dimanche</th> </tr> </thead>
-          <tbody> <tr> <td>&nbsp;</td>      <td>06h00-07h30</td>  <td>&nbsp;</td>      <td>06h00-07h30</td>  <td>&nbsp;</td>  <td>06h30-08h00</td> <td>07h30-09h00</td> </tr>
-                  <tr> <td>19h15-20h30</td> <td>20h00-21h30*</td> <td>19h30-20h45</td> <td>20h00-21h30*</td> <td>&nbsp;</td>   <td>&nbsp;</td>     <td>19h00-20h15</td> </tr>
-          </tbody>
-        </table>
+        <menu role="tablist" aria-label="Tab Component">
+          <li role="tab" aria-selected="true">
+            <label id="tab-1-label" for="tab-1" aria-controls="panel-1">Horaire d'automne-hiver</label>
+          </li>
+          <!-- deuxieme horaire 
+          <li role="tab">
+            <label id="tab-2-label" for="tab-2" aria-controls="panel-2">Horaire d'été</label>
+          </li>
+          -->
+        </menu>
+        <section>
+            <input type="radio" name="tabs" id="tab-1" hidden checked>
+            <section id="panel-1" role="tabpanel" aria-labelledby="tab-1-label">
+              <table>
+                <thead> <tr> <th>Lundi</th>       <th>Mardi</th>        <th>Mercredi</th>    <th>Jeudi</th>       <th>Vendredi</th> <th>Samedi</th>      <th>Dimanche</th> </tr> </thead>
+                <tbody> <tr> <td>&nbsp;</td>      <td>06h00-07h30</td>  <td>&nbsp;</td>      <td>06h00-07h30</td>  <td>&nbsp;</td>  <td>06h30-08h00</td> <td>07h30-09h00</td> </tr>
+                        <tr> <td>19h15-20h30</td> <td>20h00-21h30*</td> <td>19h30-20h45</td> <td>20h00-21h30*</td> <td>&nbsp;</td>   <td>&nbsp;</td>     <td>19h00-20h15</td> </tr>
+                </tbody>
+              </table>
+            </section>
+            <!-- deuxieme horaire 
+            <input type="radio" name="tabs" id="tab-2" hidden>
+            <section id="panel-2" role="tabpanel" aria-labelledby="tab-2-label">
+              <p>À venir...</p>
+            </section>
+            -->
+        </section>
         <p>
           <small>N.B. : Les nageurs sont libres de choisir l'horaire qui leur convient. Les horaires peuvent être modifiés sans préavis. Surveillez vos courriels.</small>
         </p>
