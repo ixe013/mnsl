@@ -1,45 +1,37 @@
 /* taken from https://jsfiddle.net/8e5t0dju */
 /* tab component */
-[role='tablist'] {
+[role="tablist"] {
   display: flex;
-  gap: 0.5rem;
+  gap: .5rem;
 }
-ol[role='tablist'],
-ul[role='tablist'],
-menu[role='tablist'] {
+ol[role="tablist"],
+ul[role="tablist"],
+menu[role="tablist"] {
   padding-inline-start: 0;
 }
-ol[role='tablist'] > li,
-ul[role='tablist'] > li,
-menu[role='tablist'] > li {
+ol[role="tablist"] > li,
+ul[role="tablist"] > li,
+menu[role="tablist"] > li {
   list-style: none;
 }
 
 /* tab headers */
-[role='tablist'] > [role='tab'] > label {
+[role="tablist"] > [role="tab"] > label {
   cursor: pointer;
-  border-bottom: 2px solid transparent;
-  padding: var(--pico-nav-link-spacing-vertical, var(--nav-link-spacing-vertical)) calc(var(--pico-nav-link-spacing-horizontal, var(--nav-link-spacing-horizontal))*1.5);
-  user-select: none;
-  border-radius: 0;
-  transition: all .25s;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
-
-:has(#tab-1:checked) [role='tablist'] label[for='tab-1'],
-:has(#tab-2:checked) [role='tablist'] label[for='tab-2'],
-:has(#tab-3:checked) [role='tablist'] label[for='tab-3'],
-:has(#tab-4:checked) [role='tablist'] label[for='tab-4'] {
-  color: var(--secondary);
-  /* background: red; */
+main:has(#tab-1:checked) #tab-1-label,
+main:has(#tab-2:checked) #tab-2-label,
+main:has(#tab-3:checked) #tab-3-label {
   background-color: var(--pico-primary-hover-background);
   font-weight: bold;
 }
 
 /* tab panels */
-input[type='radio'] + [role='tabpanel'] {
+input[type="radio"] + [role="tabpanel"] {
   display: none;
 }
-input[type='radio']:checked + [role='tabpanel'] {
+input[type="radio"]:checked + [role="tabpanel"] {
   display: block;
 }
-
